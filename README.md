@@ -1,4 +1,4 @@
-# Quadkey
+# Quadkey [![Build Status](https://travis-ci.org/deg84/quadkey.svg?branch=master)](https://travis-ci.org/deg84/quadkey)
 
 Based off of https://msdn.microsoft.com/en-us/library/bb259689.aspx
 
@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ### encode
 
-```
+```ruby
 latitude = 35.657976
 longitude = -139.745364
 precision = 16
@@ -32,7 +32,7 @@ quadkey = Quadkey.encode(latitude, longitude, precision)
 
 ### decode
 
-```
+```ruby
 (latitude, longitude, precision) = Quadkey.decode('0221130032120022')
 ```
 
@@ -44,7 +44,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/quadkey. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/deg84/quadkey. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License
