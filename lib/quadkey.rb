@@ -20,6 +20,22 @@ module Quadkey
     return latitude, longitude, precision
   end
 
+  def self.neighbors(quadkey)
+    tile_x, tile_y, precision = quadkey_to_tile(quadkey)
+    neighbors = []
+    permutation = [
+      [-1, -1], [0, -1], [1, -1],
+      [-1,  0], [0,  0], [1,  0],
+      [-1,  1], [0,  1], [1,  1]
+    ]
+    permutation.each do |value|
+      perm_x, perm_y = value
+      neighbors << tile_to_quadkey(tile_x + perm_x, tile_y + perm_y, precision)
+    end
+
+    return neighbors
+  end
+
   def self.clip(n, min_value, max_value)
     [[n, min_value].max, max_value].min
   end
