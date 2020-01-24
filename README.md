@@ -1,6 +1,6 @@
 # Quadkey [![Build Status](https://travis-ci.org/deg84/quadkey.svg?branch=master)](https://travis-ci.org/deg84/quadkey)
 
-Based off of https://msdn.microsoft.com/en-us/library/bb259689.aspx
+Based off of https://docs.microsoft.com/en-us/bingmaps/articles/bing-maps-tile-system
 
 ## Installation
 
