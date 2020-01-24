@@ -5,6 +5,7 @@ module Quadkey
   MAX_LATITUDE = 85.05112878
   MIN_LONGITUDE = -180
   MAX_LONGITUDE = 180
+  EARTH_RADIUS = 6378137
 
   def self.encode(latitude, longitude, precision)
     pixel_x, pixel_y = coordinates_to_pixel(latitude, longitude, precision)
@@ -42,6 +43,11 @@ module Quadkey
 
   def self.map_size(precision)
     256 << precision
+  end
+
+  def self.ground_resolution(latitude, precision)
+    latitude = clip(latitude, MIN_LATITUDE, MAX_LATITUDE);
+    return Math.cos(latitude * Math::PI / 180) * 2 * Math::PI * EARTH_RADIUS / map_size(precision);
   end
 
   def self.coordinates_to_pixel(latitude, longitude, precision)

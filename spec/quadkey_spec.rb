@@ -17,6 +17,14 @@ describe Quadkey do
     end
   end
 
+  describe '#ground_resolution' do
+    context 'latitude: 35.6684415, precision: 16' do
+      it '1.9405565642194964' do
+        expect(Quadkey.ground_resolution(35.6684415, 16)).to eq(1.9405565642194964)
+      end
+    end
+  end
+
   describe '#neighbors' do
     context "quadkey: '133002112310301'" do
       it do
